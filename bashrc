@@ -59,7 +59,7 @@ fi
 
 # some more ls aliases
 alias ls='ls --color=auto'
-alias ll='ls -alrF'
+alias ll='ls -alrFt'
 alias la='ls -A'
 alias rm='rm -i'
 alias cp='cp -i'
@@ -103,3 +103,7 @@ export USE_CCACHE=1
 
 # For GIT
 export GIT_EDITOR=vim
+
+if [ -f ~/.bash_projects ]; then
+    . ~/.bash_projects
+fi
