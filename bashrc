@@ -69,7 +69,7 @@ alias 2p='cd ../..'
 alias 3p='cd ../../..'
 alias 4p='cd ../../../..'
 alias 5p='cd ../../../../..'
-alias rg='grep -n --color'
+alias rg='grep -rn --color'
 alias ff='find ./* -name'
 
 # Add an "alert" alias for long running commands.  Use like so:
