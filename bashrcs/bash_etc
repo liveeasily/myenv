@@ -1,0 +1,25 @@
+function cgrep()
+{
+    find . -name .repo -prune -o -name .git -prune -o -name out -prune -o \
+        -type f \( -name '*.c' -o -name '*.cc' -o -name '*.cpp' -o -name '*.cxx' -o -name '*.h' -o -name '*.hpp' -o -name '*.hxx' \) \
+        -exec grep --color -n "$@" {} +
+}
+
+function mgrep()
+{
+    find . -name .repo -prune -o -name .git -prune -o -path ./out -prune -o -regextype posix-egrep \
+        -iregex '(.*\/Makefile|.*\/Makefile\..*|.*\.make|.*\.mak|.*\.mk)' -type f \
+        -exec grep --color -n "$@" {} +
+}
+
+function jgrep()
+{
+    find . -name .repo -prune -o -name .git -prune -o -name out -prune -o -type f -name "*\.java" \
+        -exec grep --color -n "$@" {} +
+}
+
+function vpnconnect()
+{
+    #globalprotect rediscover-network -p windvpn-primary.windriver.com --gateway windvpn1-ALAPAN01.WINDRIVER.COM
+    globalprotect rediscover-network -p wr.alameda.windriver.com --gateway windvpn1-ALAPAN01.WINDRIVER.COM
+}

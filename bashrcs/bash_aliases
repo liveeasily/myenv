@@ -1,0 +1,15 @@
+alias ls='ls --color=auto'
+alias ll='ls -alrFt'
+alias la='ls -A'
+alias rm='rm -i'
+#alias cp='cp -i'
+alias mv='mv -i'
+alias p='cd ..'
+alias 2p='cd ../..'
+alias 3p='cd ../../..'
+alias 4p='cd ../../../..'
+alias 5p='cd ../../../../..'
+alias rg='grep -n --color'
+alias ff='find ./* -name'
+
+alias tmux="TERM=screen-256color-bec tmux"

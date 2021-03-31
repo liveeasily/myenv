@@ -1,0 +1,29 @@
+# bashrc file for android
+
+# function to connect adb through tpcip
+function wadb()
+{
+    echo "adb disconnect"
+    adb disconnect
+
+    echo "adb wait-for-device"
+    adb wait-for-device
+
+    echo "trying to get ip address of the device..."
+    ipaddr=''
+    while [ -z $ipaddr ]
+    do
+      ipaddr=$(adb shell ifconfig wlan0 | head -2 | grep inet | awk -F'[: ]+' '{print $4}';)
+      if [ ${#ipaddr} -lt 7 ]; then
+        # echo "wrong ip address. ${ipaddr}"
+        ipaddr=''
+        sleep 3
+      fi
+    done
+
+    adb tcpip 5555
+    sleep 1
+
+    echo "adb connect $ipaddr"
+    adb connect $ipaddr 
+}
