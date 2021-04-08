@@ -20,6 +20,12 @@ function jgrep()
 
 function vpnconnect()
 {
-    #globalprotect rediscover-network -p windvpn-primary.windriver.com --gateway windvpn1-ALAPAN01.WINDRIVER.COM
+    #globalprotect rediscover-network -p windvpn-primary.windriver.com --gateway windvpn1-SELPAN01.WINDRIVER.COM
     globalprotect rediscover-network -p wr.alameda.windriver.com --gateway windvpn1-ALAPAN01.WINDRIVER.COM
+}
+
+function mkcd()
+{
+    mkdir $1
+    cd $1
 }
